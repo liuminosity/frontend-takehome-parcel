@@ -1,14 +1,16 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
+import { ThemeProvider } from 'styled-components';
 
-import Search from './features/Search';
+import theme from './theme';
+import Search from './features/Search/components';
 
 export default class App extends PureComponent {
   render() {
     return (
-      <div>
+      <ThemeProvider theme={theme}>
         <Search />
-      </div>
+      </ThemeProvider>
     )
   }
 }

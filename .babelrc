@@ -1,6 +1,15 @@
 {
   "plugins": [
     "transform-decorators-legacy",
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    "babel-plugin-styled-components"
   ],
   "presets": [
     "es2015-without-strict",
