@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     primary: 'blue',
-    primaryComplement: 'white',
+    primaryComplement: 'lightblue',
     secondary: 'green',
     secondaryComplement: 'white',
 
@@ -9,6 +9,8 @@ const theme = {
     warningComplement: 'black',
     error: 'red',
     errorComplement: 'black',
+    disabled: 'grey',
+    disabledComplement: 'white',
   },
 }
 

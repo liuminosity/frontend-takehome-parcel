@@ -28,9 +28,8 @@ export default class Input extends PureComponent {
 
   @autobind
   handleChange(e) {
-    console.log(e.target.value)
     this.setState({
-      value: this.state.value + e.target.value,
+      value: e.target.value,
     });
   }
 
@@ -42,15 +41,13 @@ export default class Input extends PureComponent {
       value,
     } = this.state;
 
-    console.log('value', value)
-
     return (
       <InputStyled
+        {...rest}
         ref={r => this.input = r}
         onChange={this.handleChange}
         type="text"
         value={value}
-        {...rest}
       />
     )
   }

@@ -10,3 +10,5 @@ export const Container = styled.div`
 export const Button = StyleGuide.Button;
 
 export const Input = StyleGuide.Input;
+
+export const Spinner = StyleGuide.Spinner;
