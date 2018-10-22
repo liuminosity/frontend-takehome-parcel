@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import autobind from 'autobind-decorator';
 import SearchApi from '../api/SearchApi';
-import SearchResultItem from './SearchResultItem';
+import RecentSearches from './RecentSearches';
+import SearchResultsList from './SearchResultsList';
 
 import {
   Container,
   Button,
   Input,
+  SpinnerContainer,
   Spinner,
 } from './indexStyled';
 
@@ -70,26 +72,20 @@ export default class Search extends PureComponent {
         <Input
           ref={r => this.searchInput = r}
         />
-        <div>
-          recent searches:
-          <ul>
-            {recentSearchQueries.map(searchQuery => (
-              <li
-                onClick={() => this.handleRecentQueryClick(searchQuery)}
-              >{searchQuery}</li>
-            ))}
-          </ul>
-        </div>
-        <Spinner
-          visible={isFetching}
+
+        <RecentSearches 
+          recentSearchQueries={recentSearchQueries}
+          onListItemClick={this.handleRecentQueryClick}
         />
-        {searchResults.length > 0 && (
-          searchResults.map(result => (
-            <SearchResultItem
-              itemDetails={result}
-            />
-          ))
-        )}
+        <SpinnerContainer>
+          <Spinner
+            visible={isFetching}
+          />
+        </SpinnerContainer>
+        <SearchResultsList
+          disabled={isFetching}
+          searchResults={searchResults}
+        />
       </Container>
     )
   }

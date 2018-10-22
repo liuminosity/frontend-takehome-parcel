@@ -3,7 +3,7 @@ const theme = {
     primary: 'blue',
     primaryComplement: 'lightblue',
     secondary: 'green',
-    secondaryComplement: 'white',
+    secondaryComplement: 'lightgreen',
 
     warning: 'yellow',
     warningComplement: 'black',

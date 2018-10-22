@@ -11,4 +11,13 @@ export const Button = StyleGuide.Button;
 
 export const Input = StyleGuide.Input;
 
-export const Spinner = StyleGuide.Spinner;
+export const SpinnerContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const Spinner = styled(StyleGuide.Spinner)`
+  position: absolute;
+  left: calc(50% - 5em);
+
+`;
